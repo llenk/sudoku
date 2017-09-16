@@ -1,0 +1,26 @@
+#gameboard {
+  width: 444px;
+  height: 444px;
+  border: 5px solid blue;
+  margin: 40px auto;
+
+}
+
+.b {
+  width: 446px;
+  height: 148px;
+}
+
+.c {
+  width: 144px;
+  height: 144px;
+  border: 2px solid blue;
+  float: left;
+}
+
+.d {
+  width: 46px;
+  height: 46px;
+  border: 1px solid blue;
+  float: left;
+}
