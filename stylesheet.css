@@ -24,3 +24,11 @@
   border: 1px solid blue;
   float: left;
 }
+
+.e {
+  margin: 10%;
+  font-size: 200%;
+  text-align: center;
+  font-family: trebuchet sans-serif;
+  font-weight: bolder;
+}
