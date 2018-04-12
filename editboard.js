@@ -10,15 +10,18 @@ window.onload = function setTabIndicies() {
 }
 
 function pickBox(e) {
-    let clickedItem = e.target.firstElementChild; //clickedItem is the div inside the square
-    if (previouslyClickedItem != clickedItem) {
-      previouslyClickedItem.parentElement.style.background = 'white';
-    }
-    clickedItem.parentElement.style.background = 'yellow';
-    clickedItem.focus();
-    clickedItem.addEventListener('keydown', addNumber);
-    e.stopPropagation();
-    previouslyClickedItem = clickedItem;
+  let clickedItem = e.target;
+  if (e.target.className == 'd') {
+    clickedItem = clickedItem.firstElementChild;
+  }
+  if (previouslyClickedItem != clickedItem) {
+    previouslyClickedItem.parentElement.style.background = 'white';
+  }
+  clickedItem.parentElement.style.background = 'yellow';
+  clickedItem.focus();
+  clickedItem.addEventListener('keydown', addNumber);
+  e.stopPropagation();
+  previouslyClickedItem = clickedItem;
 }
 
 function addNumber(e) {
@@ -33,7 +36,12 @@ function checkNumber(e) {
 
 }
 
-let board = document.getElementById('gameboard');
-let previouslyClickedItem = document.getElementById('e00'); //just set an initial value here
-board.addEventListener("click", pickBox, true);
-board.addEventListener("keydown", checkNumber);
+let previouslyClickedItem;
+
+$(document).ready( function() {
+  let board = document.getElementById('gameboard');
+  previouslyClickedItem = document.getElementById('e00'); //just set an initial value here
+  board.addEventListener("click", pickBox, true);
+  board.addEventListener("keydown", checkNumber);
+});
+
